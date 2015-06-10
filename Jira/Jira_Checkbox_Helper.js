@@ -13,7 +13,7 @@ var $ = unsafeWindow.jQuery;
 
 function markAll(){
 
-	$('.content-container input[data-key=_billed_]:not(:checked)').slowEach( 400, function(){
+	$('.content-container input[data-key=_billed_][id]:not(:checked)').removeAttr('disabled').slowEach( 400, function(){
 		  $("span#all").html(length);
           $(this).click();
           $("span#current").html( parseInt(jQuery("span#current").html()) + 1 );
